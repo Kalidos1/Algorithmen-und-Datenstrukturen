@@ -1,6 +1,5 @@
 package Aufgabe1;
 
-import java.security.Key;
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -28,8 +27,10 @@ public class HashDictionary<K extends Comparable<? super K>,V> implements Dictio
     @Override
     public V insert(K key, V value) {
         int i = getHashKey(key);
-        for (int j = 0; j < data.length; j++) {
-            for (Entry<K,V> x : data[j]) {
+        int j = Math.abs(key.hashCode());
+        int prim = 0;
+        while ((prim = getPrimzahl(prim)) <= data.length) {
+            for (Entry<K,V> x : data[j % prim]) {
                 if (x.getKey().equals(key)) {
                     V r = x.getValue();
                     x.setValue(value);
@@ -71,26 +72,39 @@ public class HashDictionary<K extends Comparable<? super K>,V> implements Dictio
 
     @Override
     public V search(K key) {
-        for (int i = 0; i < data.length; i++)
-            for (Entry<K, V> x : data[i])
+        int prim = 0;
+        int i = Math.abs(key.hashCode());
+        while ((prim = getPrimzahl(prim)) <= data.length) {
+            for (Entry<K,V> x : data[i % prim]) {
                 if (x.getKey().equals(key)) return x.getValue();
+            }
+        }
         return null;
+    }
+
+    public int getPrimzahl(int x) {
+        x *= 2;
+        if (x == 0) return 3;
+        while ((x % 2 == 0) || (x % 3 == 0) || (x % 5 == 0)) x++;
+        return x;
     }
 
     @Override
     public V remove(K key) {
         int index;
-        for (int i = 0; i < data.length; i++) {
+        int prim = 0;
+        int i = Math.abs(key.hashCode());
+        while ((prim = getPrimzahl(prim)) <= data.length) {
             index = 0;
-            for (Entry<K, V> x : data[i]) {
+            for (Entry<K, V> x : data[i % prim]) {
                 if (x.getKey().equals(key)) {
                     V r = x.getValue();
-                    data[i].remove(index);
-                    //System.out.println(data[i].get(index));
+                    data[i % prim].remove(index);
                     size--;
                     return r;
                 }
                 index++;
+                System.out.println(index);
             }
         }
         return null;

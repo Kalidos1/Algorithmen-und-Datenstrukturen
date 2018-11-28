@@ -84,13 +84,13 @@ public class DictionaryTest {
 	private static void testDict(Dictionary<String, String> dict) {
 		System.out.println("===== New Test Case ========================");
 		System.out.println("test " + dict.getClass());
-		System.out.println(dict.insert("gehen", "go") == null);		// true
+		System.out.println(dict.insert("gehen", "go") == null);		 // true
 		String s = new String("gehen");
-		System.out.println(dict.search(s) != null);					// true
-		System.out.println(dict.search(s).equals("go"));			// true
-		System.out.println(dict.insert(s, "walk").equals("go"));	// true
-		System.out.println(dict.search("gehen").equals("walk"));	// true
-		System.out.println(dict.remove("gehen").equals("walk"));	// true
+		System.out.println(dict.search(s) != null);					 // true
+		System.out.println(dict.search(s).equals("go"));			 // true
+		System.out.println(dict.insert(s, "walk").equals("go"));	 // true
+		System.out.println(dict.search("gehen").equals("walk")); 	// true
+		System.out.println(dict.remove("gehen").equals("walk")); 	// true
 		System.out.println(dict.remove("gehen") == null);			// true
 		dict.insert("starten", "start");
 		dict.insert("gehen", "go");

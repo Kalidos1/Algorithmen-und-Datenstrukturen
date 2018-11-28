@@ -250,8 +250,8 @@ public class Einlesen extends Component {
             dict.insert(testD.get(i),testE.get(i));
             final long timeEnd = System.nanoTime();
             finalTime += (timeEnd - timeStart);
-            System.out.print("Zeit für ein insert: ");
-            timePrint(timeEnd - timeStart);
+            //System.out.print("Zeit für ein insert: ");
+            //timePrint(timeEnd - timeStart);
         }
         System.out.print("Insert: ");
         timePrint(finalTime);

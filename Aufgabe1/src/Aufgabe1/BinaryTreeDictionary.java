@@ -198,11 +198,14 @@ public class BinaryTreeDictionary<K extends Comparable<? super K>,V> implements 
             // p muss gelöscht werden und hat zwei Kinder:
             MinEntry<K,V> min = new MinEntry<K,V>();
             p.right = getRemMinR(p.right, min);
-                if (p.right != null) p.right.parent = p;
+            if (p.right != null) {
+                p.right.parent = p;
+            }
             oldValue = p.value;
             p.key = min.key;
             p.value = min.value;
         }
+        p = balance(p);
         return p;
     }
 
