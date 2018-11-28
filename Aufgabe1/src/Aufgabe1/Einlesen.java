@@ -2,8 +2,7 @@ package Aufgabe1;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -28,7 +27,13 @@ public class Einlesen extends Component {
                  case "i" : insert(); break;
                  case "r" : remove(); break;
                  case "h" : help(); break;
-                 case "z" : zeitMessung(); break;
+                 case "z" :
+                     try {
+                         zeitMessung();
+                     } catch (IOException e) {
+                         e.printStackTrace();
+                     }
+                     break;
                  default:
                      System.out.println("Falsche Eingabe!");
                      input.nextLine();
@@ -100,7 +105,6 @@ public class Einlesen extends Component {
                         dict.insert(k, v);
                         final long timeEnd = System.nanoTime();
                         finalTime += (timeEnd - timeStart);
-
                     }
                 } else {
                     while (sc2.hasNextLine()) {
@@ -168,9 +172,7 @@ public class Einlesen extends Component {
 
     }
 
-    private static Dictionary SortedArrayDictionary() {
-        return new SortedArrayDictionary<>();
-    }
+    private static Dictionary SortedArrayDictionary() { return new SortedArrayDictionary<>(); }
 
     private static Dictionary HashDictionary() {
         return new HashDictionary<>(3);
@@ -181,35 +183,94 @@ public class Einlesen extends Component {
     }
 
 
-    private static void zeitMessung() {
-        LinkedList<String> testD = new LinkedList<String>();
-        LinkedList<String> testE = new LinkedList<String>();
-        for (Dictionary.Entry x : dict) {
-            testD.add((String) x.getKey());
+    private static void zeitMessung() throws IOException {
+        LinkedList<String> testD = new LinkedList<>();
+        LinkedList<String> testE = new LinkedList<>();
+
+        File file = new File("dtengl.txt");
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String st;
+        while ((st = br.readLine()) != null)
+        {
+            testD.add(st.split(" ")[0]);
+            testE.add(st.split(" ")[1]);
         }
-        for (Dictionary.Entry x : dict) {
-            testE.add((String) x.getValue());
-        }
-        long finalTime = 0;
+
+        //fillDict(testD,testE);
+
+        long finalTimeG;
+        long finalTimeN;
+
         int y = input.nextInt();
         if(y == 0) {
             System.out.print("Gefundene Wörter!");
-            for (String x : testD) {
-                final long startTime = System.nanoTime();
-                dict.search(x);
-                final long endTime = System.nanoTime();
-                finalTime += (endTime - startTime);
-            }
+            finalTimeG = zeit(testD);
+            timePrint(finalTimeG);
+            System.out.print("Nicht Gefundene Wörter!");
+            finalTimeN = zeit(testE);
+            timePrint(finalTimeN);
         } else {
-            System.out.print("Nicht gefundene Wörter!");
-            for (String x : testE) {
-                final long startTime = System.nanoTime();
-                dict.search(x);
-                final long endTime = System.nanoTime();
-                finalTime += (endTime - startTime);
-            }
+            System.out.println("SortedArrayDictionary Time:");
+            dict = SortedArrayDictionary();
+            fillDict(testD,testE);
+            System.out.print("Gefunden: ");
+            finalTimeG = zeit(testD);
+            timePrint(finalTimeG);
+            System.out.print("Nicht gefunden: ");
+            finalTimeN = zeit(testE);
+            timePrint(finalTimeN);
+
+            System.out.println("HashDictionary Time:");
+            dict = HashDictionary();
+            fillDict(testD,testE);
+            System.out.print("Gefunden: ");
+            finalTimeG = zeit(testD);
+            timePrint(finalTimeG);
+            System.out.print("Nicht gefunden: ");
+            finalTimeN = zeit(testE);
+            timePrint(finalTimeN);
+
+            System.out.println("BinaryTreeDictionary Time:");
+            dict = BinaryTreeDictionary();
+            fillDict(testD,testE);
+            System.out.print("Gefunden: ");
+            finalTimeG = zeit(testD);
+            timePrint(finalTimeG);
+            System.out.print("Nicht gefunden: ");
+            finalTimeN = zeit(testE);
+            timePrint(finalTimeN);
         }
-         System.out.println("(" + (finalTime / 1e+9) + " Sekunden)/("
-                + (finalTime / 1e+6) + " Millisekunden)");
+    }
+
+    private static void fillDict(LinkedList<String> testD, LinkedList<String> testE) {
+        long finalTime = 0;
+        for (int i = 0; i < testD.size(); i++)
+        {
+            final long timeStart = System.nanoTime();
+            dict.insert(testD.get(i),testE.get(i));
+            final long timeEnd = System.nanoTime();
+            finalTime += (timeEnd - timeStart);
+            System.out.print("Zeit für ein insert: ");
+            timePrint(timeEnd - timeStart);
+        }
+        System.out.print("Insert: ");
+        timePrint(finalTime);
+    }
+
+    private static void timePrint(long time) {
+        System.out.println("(" + (time / 1e+9) + " Sekunden)/("
+                + (time / 1e+6) + " Millisekunden)");
+    }
+
+    private static long zeit(LinkedList<String> test)
+    {
+        long finalTime = 0;
+        for (String x : test) {
+            final long startTime = System.nanoTime();
+            dict.search(x);
+            final long endTime = System.nanoTime();
+            finalTime += (endTime - startTime);
+        }
+        return finalTime;
     }
 }
