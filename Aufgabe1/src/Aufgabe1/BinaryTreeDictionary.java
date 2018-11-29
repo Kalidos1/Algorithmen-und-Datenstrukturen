@@ -221,6 +221,7 @@ public class BinaryTreeDictionary<K extends Comparable<? super K>,V> implements 
                 p.left.parent = p;
             }
         }
+        p = balance(p);
         return p;
     }
     @Override

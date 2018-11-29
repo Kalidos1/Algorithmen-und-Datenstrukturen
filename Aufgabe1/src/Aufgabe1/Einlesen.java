@@ -98,9 +98,9 @@ public class Einlesen extends Component {
                     for (int i = 0; i < n;i++) {
                         if (!sc2.hasNext()) break;
                         String k = sc2.next();
-                        System.out.println(k);
+                        //System.out.println(k);
                         String v = sc2.next();
-                        System.out.println(v);
+                        //System.out.println(v);
                         final long timeStart = System.nanoTime();
                         dict.insert(k, v);
                         final long timeEnd = System.nanoTime();
@@ -110,9 +110,9 @@ public class Einlesen extends Component {
                     while (sc2.hasNextLine()) {
                         if (!sc2.hasNext()) break;
                         String k = sc2.next();
-                        System.out.println(k);
+                        //System.out.println(k);
                         String v = sc2.next();
-                        System.out.println(v);
+                        //System.out.println(v);
                         final long timeStart = System.nanoTime();
                         dict.insert(k, v);
                         final long timeEnd = System.nanoTime();
@@ -190,10 +190,12 @@ public class Einlesen extends Component {
         File file = new File("dtengl.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
         String st;
-        while ((st = br.readLine()) != null)
+       int i = 0;
+        while ((st = br.readLine()) != null && i <= 8000)
         {
             testD.add(st.split(" ")[0]);
             testE.add(st.split(" ")[1]);
+            i++;
         }
 
         //fillDict(testD,testE);
@@ -244,10 +246,14 @@ public class Einlesen extends Component {
 
     private static void fillDict(LinkedList<String> testD, LinkedList<String> testE) {
         long finalTime = 0;
+        String s;
+        String e;
         for (int i = 0; i < testD.size(); i++)
         {
+            s = testD.get(i);
+            e = testE.get(i);
             final long timeStart = System.nanoTime();
-            dict.insert(testD.get(i),testE.get(i));
+            dict.insert(s,e);
             final long timeEnd = System.nanoTime();
             finalTime += (timeEnd - timeStart);
             //System.out.print("Zeit für ein insert: ");

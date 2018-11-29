@@ -27,18 +27,13 @@ public class HashDictionary<K extends Comparable<? super K>,V> implements Dictio
     @Override
     public V insert(K key, V value) {
         int i = getHashKey(key);
-        int j = Math.abs(key.hashCode());
-        int prim = 0;
-        while ((prim = getPrimzahl(prim)) <= data.length) {
-            for (Entry<K,V> x : data[j % prim]) {
+            for (Entry<K,V> x : data[i]) {
                 if (x.getKey().equals(key)) {
                     V r = x.getValue();
                     x.setValue(value);
                     return r;
                 }
             }
-
-        }
         if (data[i].size() == 2) {
             ensureCapacity(data.length);
             i = getHashKey(key);
@@ -61,8 +56,13 @@ public class HashDictionary<K extends Comparable<? super K>,V> implements Dictio
         while ((newCapacity % 2 == 0) || (newCapacity % 3 == 0) || (newCapacity % 5 == 0))
             newCapacity++;
         data = new LinkedList[newCapacity];
+        size = 0;
         ensureLinkedList();
-        System.arraycopy(old, 0, data, 0, old.length);
+        for (int i = 0; i < old.length; i++) {
+            for (Entry<K,V> y : old[i]) {
+                insert(y.getKey(),y.getValue());
+            }
+        }
     }
 
     public int getHashKey(K key) {
@@ -72,41 +72,28 @@ public class HashDictionary<K extends Comparable<? super K>,V> implements Dictio
 
     @Override
     public V search(K key) {
-        int prim = 0;
-        int i = Math.abs(key.hashCode());
-        while ((prim = getPrimzahl(prim)) <= data.length) {
-            for (Entry<K,V> x : data[i % prim]) {
+        int i = getHashKey(key);
+            for (Entry<K,V> x : data[i]) {
                 if (x.getKey().equals(key)) return x.getValue();
             }
-        }
         return null;
     }
 
-    public int getPrimzahl(int x) {
-        x *= 2;
-        if (x == 0) return 3;
-        while ((x % 2 == 0) || (x % 3 == 0) || (x % 5 == 0)) x++;
-        return x;
-    }
 
     @Override
     public V remove(K key) {
         int index;
-        int prim = 0;
-        int i = Math.abs(key.hashCode());
-        while ((prim = getPrimzahl(prim)) <= data.length) {
+        int i = getHashKey(key);
             index = 0;
-            for (Entry<K, V> x : data[i % prim]) {
+            for (Entry<K, V> x : data[i]) {
                 if (x.getKey().equals(key)) {
                     V r = x.getValue();
-                    data[i % prim].remove(index);
+                    data[i].remove(index);
                     size--;
                     return r;
                 }
                 index++;
-                System.out.println(index);
             }
-        }
         return null;
     }
 
