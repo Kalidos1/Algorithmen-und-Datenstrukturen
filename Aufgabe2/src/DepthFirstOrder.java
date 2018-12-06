@@ -1,9 +1,7 @@
 // O. Bittel;
 // 22.02.2017
 
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Klasse für Tiefensuche.
@@ -27,7 +25,36 @@ public class DepthFirstOrder<V> {
      */
     public DepthFirstOrder(DirectedGraph<V> g) {
         myGraph = g;
-        // ...
+    }
+
+    public void visitDF(V v) {
+        Set<V> besucht = new TreeSet<>();
+        visitDFRekursive(v,myGraph,besucht);
+    }
+
+    public void visitDFAllNodes() {
+        Set<V> besucht = new TreeSet<>();
+
+        for (V entry : myGraph.getVertexSet()) {
+            if (!besucht.contains(entry)) {
+                System.out.println("Tree: " + numberOfDFTrees);
+                numberOfDFTrees++;
+                visitDFRekursive(entry,myGraph,besucht);
+            }
+        }
+    }
+
+    private void visitDFRekursive(V v,DirectedGraph<V> g,Set<V> besucht) {
+        besucht.add(v);
+        preOrder.add(v);
+        System.out.println(v);
+
+        for (V entry1 : g.getSuccessorVertexSet(v)) {
+            if (!besucht.contains(entry1)) {
+                visitDFRekursive(entry1,g,besucht);
+            }
+        }
+        postOrder.add(v);
     }
 
     /**
@@ -71,9 +98,9 @@ public class DepthFirstOrder<V> {
         g.addEdge(7, 4);
 
         DepthFirstOrder<Integer> dfs = new DepthFirstOrder<>(g);
-        System.out.println(dfs.numberOfDFTrees());	// 2
-        System.out.println(dfs.preOrder());		// [1, 2, 5, 6, 3, 7, 4]
-        System.out.println(dfs.postOrder());		// [5, 6, 2, 1, 4, 7, 3]
-
+        dfs.visitDFAllNodes();
+        System.out.println("Number of Trees: " + dfs.numberOfDFTrees());	// 2
+        System.out.println("PreOrder: " + dfs.preOrder());		// [1, 2, 5, 6, 3, 7, 4]
+        System.out.println("PostOrder: " + dfs.postOrder());		// [5, 6, 2, 1, 4, 7, 3]
     }
 }
