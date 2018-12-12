@@ -11,7 +11,7 @@ import java.util.*;
  */
 public class TopologicalSort<V> {
     private List<V> ts = new LinkedList<>(); // topologisch sortierte Folge
-	// ...
+	private V v;
 
 	/**
 	 * Führt eine topologische Sortierung für g durch.
@@ -23,23 +23,24 @@ public class TopologicalSort<V> {
 
     public List<V> topSort(DirectedGraph<V> g) {
 		List<V> ts = new LinkedList<>();
-		V [] inDegree;
+		int [] inDegree = new int[g.getNumberOfVertexes() + 1]; //KA was für ne Reservierung
 		Queue<V> q = new PriorityQueue<>();
 
 		for (V x : g.getVertexSet()) {
-			inDegree[x] = ts.size() + inDegree.length;
-			if (inDegree[x] == 0) {
+			inDegree[(int)x] = g.getPredecessorVertexSet(x).size();
+			if (inDegree[(int)x] == 0) {
 				q.add(x);
 			}
 		}
-
 		while (!q.isEmpty()) {
 			v = q.remove();
 			ts.add(v);
-
+			for (V x : g.getVertexSet()) {
+				for (V w : g.getSuccessorVertexSet(x)) {
+					if (--inDegree[(int)w] == 0) q.add(w);
+				}
+			}
 		}
-
-
 		if (ts.size() != g.getVertexSet().size()) {
 			return null;
 		} else {
@@ -47,7 +48,6 @@ public class TopologicalSort<V> {
 		}
 	}
 
-    
     
 	/**
 	 * Liefert eine nicht modifizierbare Liste (unmodifiable view) zurück,
