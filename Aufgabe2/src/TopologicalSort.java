@@ -27,8 +27,8 @@ public class TopologicalSort<V> {
 		Queue<V> q = new PriorityQueue<>();
 
 		for (V x : g.getVertexSet()) {
-			inDegree[(int)x] = g.getPredecessorVertexSet(x).size();
-			if (inDegree[(int)x] == 0) {
+			inDegree[(int) x] = g.getPredecessorVertexSet(x).size();
+			if (inDegree[(int) x] == 0) {
 				q.add(x);
 			}
 		}

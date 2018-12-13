@@ -3,10 +3,7 @@
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Klasse für Bestimmung aller strengen Komponenten.
@@ -25,6 +22,9 @@ public class StrongComponents<V> {
     // Component 3: 4,
 
 	private final Map<Integer,Set<V>> comp = new TreeMap<>();
+	private final DirectedGraph<V> myGraph;
+	private final DepthFirstOrder<V> DF;
+
 	
 	/**
 	 * Ermittelt alle strengen Komponenten mit
@@ -32,8 +32,31 @@ public class StrongComponents<V> {
 	 * @param g gerichteter Graph.
 	 */
 	public StrongComponents(DirectedGraph<V> g) {
-		// ...
+		myGraph = g;
+		DF = new DepthFirstOrder<>(g);
+		KosarajuSharirAlgorithmus();
 	}
+
+	public void KosarajuSharirAlgorithmus() {
+		DF.visitDFAllNodes();
+		List<V> p = DF.postOrder();
+		System.out.println(p);
+
+		List<V> pi = new LinkedList<>();
+		for (int i = p.size()-1; i >= 0; i--) {
+			pi.add(p.get(i));
+		}
+		System.out.println(pi);
+
+		DirectedGraph<V> gi = myGraph.invert();
+		System.out.println(gi);
+
+		DepthFirstOrder test = new DepthFirstOrder<>(gi);
+		test.visitDFAllNodes();
+
+	}
+
+
 	
 	/**
 	 * 
@@ -45,7 +68,7 @@ public class StrongComponents<V> {
 
 	@Override
 	public String toString() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		return "lol";
 	}
 	
 	/**
@@ -90,8 +113,8 @@ public class StrongComponents<V> {
 		System.out.println(sc.numberOfComp());  // 4
 		
 		System.out.println(sc);
-			// Component 0: 5, 6, 7, 
-        	// Component 1: 8, 
+			// Component 0: 5, 6, 7,
+        	// Component 1: 8,
             // Component 2: 1, 2, 3, 
             // Component 3: 4, 
 	}
@@ -112,6 +135,6 @@ public class StrongComponents<V> {
 	
 	public static void main(String[] args) throws FileNotFoundException {
 		test1();
-		test2();
+		//test2();
 	}
 }
