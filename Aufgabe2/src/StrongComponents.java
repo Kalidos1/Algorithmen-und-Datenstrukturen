@@ -40,19 +40,46 @@ public class StrongComponents<V> {
 	public void KosarajuSharirAlgorithmus() {
 		DF.visitDFAllNodes();
 		List<V> p = DF.postOrder();
-		System.out.println(p);
+		System.out.println("p : " + p);
 
 		List<V> pi = new LinkedList<>();
 		for (int i = p.size()-1; i >= 0; i--) {
 			pi.add(p.get(i));
 		}
-		System.out.println(pi);
+		System.out.println("pi : " + pi);
 
 		DirectedGraph<V> gi = myGraph.invert();
-		System.out.println(gi);
+		System.out.println("gi : \n" + gi);
+
+
 
 		DepthFirstOrder test = new DepthFirstOrder<>(gi);
-		test.visitDFAllNodes();
+
+		Set<V> besucht = new TreeSet<>();
+		Set<V> testSet = new TreeSet<>();
+		Set<V> testSet2 = new TreeSet<>();
+
+		int tmp = 0;
+		for (V x : pi) {
+			besucht = test.visitDFTest(x,gi,besucht);
+			for (V y : besucht) {
+				if (!testSet2.contains(y)) {
+					testSet.add(y);
+				}
+			}
+			for (V z : besucht) {
+				testSet2.add(z);
+			}
+			if (testSet.size() != 0) {
+				comp.put(tmp,testSet);
+				tmp++;
+			}
+			testSet = new TreeSet<>();
+		}
+
+		System.out.println(comp);
+
+
 
 	}
 
@@ -68,7 +95,12 @@ public class StrongComponents<V> {
 
 	@Override
 	public String toString() {
-		return "lol";
+		StringBuilder sb = new StringBuilder();
+		for (Map.Entry<Integer, Set<V>> entry : comp.entrySet()) {
+			sb.append(entry);
+			sb.append("\n");
+		}
+		return sb.toString();
 	}
 	
 	/**
@@ -121,8 +153,8 @@ public class StrongComponents<V> {
 	
 	private static void test2() throws FileNotFoundException {
 		DirectedGraph<Integer> g = readDirectedGraph(new File("mediumDG.txt"));
-		System.out.println(g.getNumberOfVertexes());
-		System.out.println(g.getNumberOfEdges());
+		System.out.println("Knoten: " + g.getNumberOfVertexes());
+		System.out.println("Kanten: " + g.getNumberOfEdges());
 		System.out.println(g);
 		
 		System.out.println("");
@@ -134,7 +166,7 @@ public class StrongComponents<V> {
 	}
 	
 	public static void main(String[] args) throws FileNotFoundException {
-		test1();
-		//test2();
+		//test1();
+		test2();
 	}
 }

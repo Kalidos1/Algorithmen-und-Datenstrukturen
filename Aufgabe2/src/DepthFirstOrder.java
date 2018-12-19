@@ -57,6 +57,19 @@ public class DepthFirstOrder<V> {
         postOrder.add(v);
     }
 
+    public Set<V> visitDFTest(V v,DirectedGraph<V> g,Set<V> besucht) {
+        besucht.add(v);
+        preOrder.add(v);
+
+        for (V entry1 : g.getSuccessorVertexSet(v)) {
+            if (!besucht.contains(entry1)) {
+                visitDFTest(entry1,g,besucht);
+            }
+        }
+        postOrder.add(v);
+        return besucht;
+    }
+
     /**
      * Liefert eine nicht modifizierbare Liste (unmodifiable view) mit einer
      * Pre-Order-Reihenfolge zurück.
