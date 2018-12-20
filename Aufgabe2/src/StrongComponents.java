@@ -97,7 +97,10 @@ public class StrongComponents<V> {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		for (Map.Entry<Integer, Set<V>> entry : comp.entrySet()) {
-			sb.append(entry);
+			sb.append("Component " + entry.getKey() + ": ");
+			for (V x : entry.getValue()) {
+				sb.append(x + ", ");
+			}
 			sb.append("\n");
 		}
 		return sb.toString();
@@ -166,7 +169,7 @@ public class StrongComponents<V> {
 	}
 	
 	public static void main(String[] args) throws FileNotFoundException {
-		//test1();
+		test1();
 		test2();
 	}
 }

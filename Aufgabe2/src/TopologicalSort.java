@@ -21,14 +21,14 @@ public class TopologicalSort<V> {
 		ts = topSort(g);
     }
 
-    public List<V> topSort(DirectedGraph<V> g) {
+    private List<V> topSort(DirectedGraph<V> g) {
 		List<V> ts = new LinkedList<>();
-		int [] inDegree = new int[g.getNumberOfVertexes() + 1]; //KA was für ne Reservierung
-		Queue<V> q = new PriorityQueue<>();
+		Map<V,Integer> inDegree = new TreeMap<>();
+		Queue<V> q = new LinkedList<>();
 
 		for (V x : g.getVertexSet()) {
-			inDegree[(int) x] = g.getPredecessorVertexSet(x).size();
-			if (inDegree[(int) x] == 0) {
+			inDegree.put(x,g.getPredecessorVertexSet(x).size());
+			if (inDegree.get(x) == 0) {
 				q.add(x);
 			}
 		}
@@ -37,7 +37,8 @@ public class TopologicalSort<V> {
 			ts.add(v);
 			for (V x : g.getVertexSet()) {
 				for (V w : g.getSuccessorVertexSet(x)) {
-					if (--inDegree[(int)w] == 0) q.add(w);
+					inDegree.put(w,(inDegree.get(w) - 1));
+					if (inDegree.get(w) == 0) q.add(w);
 				}
 			}
 		}

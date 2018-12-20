@@ -22,7 +22,7 @@ public class AdjacencyListDirectedGraph<V> implements DirectedGraph<V> {
     private final Map<V, Map<V, Double>> succ = new TreeMap<>(); 
     
     // doppelte Map für die Vorgängerknoten:
-    private final Map<V, Map<V, Double>> pred = new TreeMap<>(); 
+    private final Map<V, Map<V, Double>> pred = new TreeMap<>();
 
     private int numberEdge = 0;
 
@@ -30,6 +30,7 @@ public class AdjacencyListDirectedGraph<V> implements DirectedGraph<V> {
 	public boolean addVertex(V v) {
 		if (succ.containsKey(v)) return false;
 		succ.put(v,new TreeMap<>());
+		pred.put(v,new TreeMap<>());
 		return true;
     }
 
@@ -39,6 +40,7 @@ public class AdjacencyListDirectedGraph<V> implements DirectedGraph<V> {
 		addVertex(w);
 		if (containsEdge(v,w)) succ.get(v).put(w,weight);
 		succ.get(v).put(w,weight);
+		pred.get(w).put(v,weight);
 		numberEdge++;
 		return true;
 	}
@@ -49,6 +51,7 @@ public class AdjacencyListDirectedGraph<V> implements DirectedGraph<V> {
 		addVertex(w);
 		if (containsEdge(v,w)) succ.get(v).put(w,1.0);
 		succ.get(v).put(w,1.0);
+		pred.get(w).put(v,1.0);
 		numberEdge++;
 		return true;
 	}
@@ -80,13 +83,10 @@ public class AdjacencyListDirectedGraph<V> implements DirectedGraph<V> {
 	
     @Override
     public int getInDegree(V v) {
-		int tmp = 0;
-		for (Map.Entry<V, Map<V,Double>> entry : succ.entrySet()) {
-			if (entry.getValue().containsKey(v)) {
-				tmp++;
-			}
+		if (pred.containsKey(v)) {
+			return pred.get(v).size();
 		}
-		return tmp;
+		return 0;
 	}
 
     @Override
@@ -104,27 +104,12 @@ public class AdjacencyListDirectedGraph<V> implements DirectedGraph<V> {
 
     @Override
     public Set<V> getPredecessorVertexSet(V v) {
-		Set<V> tmp = new HashSet<>();
-		for (Map.Entry<V, Map<V,Double>> entry : succ.entrySet()) {
-			for (Map.Entry<V, Double> entry1 : entry.getValue().entrySet()) {
-				if(entry1.getKey().equals(v))
-				tmp.add(entry.getKey());
-			}
-		}
-		return Collections.unmodifiableSet(tmp);
+		return Collections.unmodifiableSet(new TreeSet<>(pred.get(v).keySet()));
 	}
 
     @Override
     public Set<V> getSuccessorVertexSet(V v) {
-		Set<V> tmp = new HashSet<>();
-		for (Map.Entry<V, Map<V,Double>> entry : succ.entrySet()) {
-			if(entry.getKey().equals(v)) {
-				for (Map.Entry<V, Double> entry1 : entry.getValue().entrySet()) {
-					tmp.add(entry1.getKey());
-				}
-			}
-		}
-		return Collections.unmodifiableSet(tmp);
+		return Collections.unmodifiableSet(new TreeSet<>(succ.get(v).keySet()));
 	}
 
     @Override
