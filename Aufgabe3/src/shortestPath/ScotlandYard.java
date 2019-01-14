@@ -7,11 +7,7 @@ import java.awt.Color;
 import java.io.IOException;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-
+import java.util.*;
 
 
 /**
@@ -36,10 +32,45 @@ public class ScotlandYard {
 	 */
 	public static DirectedGraph<Integer> getGraph() throws FileNotFoundException {
 
-		DirectedGraph<Integer> sy_graph = new AdjacencyListDirectedGraph<>();
-		Scanner in = new Scanner(new File("ScotlandYard_Kanten.txt"));
+		//Zum schauen wo der ordner ist
+		//File file = new File("src/shortestPath");
+		//for(String fileNames : file.list()) System.out.println(fileNames);
 
-		// ...
+		DirectedGraph<Integer> sy_graph = new AdjacencyListDirectedGraph<>();
+		Scanner in = new Scanner(new File("src/shortestPath/ScotlandYard_Kanten.txt"));
+
+		while (in.hasNextLine()) {
+			if (!in.hasNext()) break;
+			int v = Integer.parseInt(in.next());
+			int w = in.nextInt();
+			double weight = 0;
+
+			switch (in.next()) {
+				case "UBahn": weight = 5; break;
+				case "Taxi": weight = 2; break;
+				case "Bus": weight = 3; break;
+				default:
+					System.out.println("Fehler");
+			}
+
+			if (sy_graph.containsEdge(v,w)) {
+				double currentWeight = sy_graph.getWeight(v,w);
+				if (currentWeight < weight) {
+					weight = currentWeight;
+				}
+			}
+
+			if (!sy_graph.containsVertex(v))
+				sy_graph.addVertex(v);
+			if (!sy_graph.containsVertex(w))
+				sy_graph.addVertex(w);
+
+			sy_graph.addEdge(v, w, weight);
+			sy_graph.addEdge(w, v, weight);
+		}
+
+		//TestAusgabe
+		//System.out.println(sy_graph.toString());
 
 		return sy_graph;
 	}
@@ -69,7 +100,7 @@ public class ScotlandYard {
 	public static void main(String[] args) throws FileNotFoundException {
 
 		DirectedGraph<Integer> syGraph = getGraph();
-		
+
 		Heuristic<Integer> syHeuristic = null; // Dijkstra
 		//Heuristic<Integer> syHeuristic = getHeuristic(); // A*
 		
@@ -78,15 +109,17 @@ public class ScotlandYard {
 
 		ShortestPath<Integer> sySp = new ShortestPath<Integer>(syGraph,syHeuristic);
 
-		sySp.searchShortestPath(65,157);
+		System.out.println(sySp.searchShortestPath(65,157));
+		System.out.println(sySp.getShortestPath());
 		System.out.println("Distance = " + sySp.getDistance()); // 9.0
 
-		sySp.searchShortestPath(1,175);
+		System.out.println(sySp.searchShortestPath(1,175));
+		System.out.println(sySp.getShortestPath());
 		System.out.println("Distance = " + sySp.getDistance()); // 25.0
 
-		sySp.searchShortestPath(1,173);
+		System.out.println(sySp.searchShortestPath(1,173));
+		System.out.println(sySp.getShortestPath());
 		System.out.println("Distance = " + sySp.getDistance()); // 22.0
-
 
 		SYSimulation sim;
 		try {
@@ -98,10 +131,10 @@ public class ScotlandYard {
 		sySp.setSimulator(sim);
 		sim.startSequence("Shortest path from 1 to 173");
 
-		//sySp.searchShortestPath(65,157); // 9.0
+		sySp.searchShortestPath(65,157); // 9.0
 		//sySp.searchShortestPath(1,175); //25.0
-		
-		sySp.searchShortestPath(1,173); //22.0
+
+		//sySp.searchShortestPath(1,173); //22.0
 		// bei Heuristik-Faktor von 1/10 wird nicht der optimale Pfad produziert.
 		// bei 1/30 funktioniert es.
 
@@ -110,21 +143,21 @@ public class ScotlandYard {
 
 		int a = -1;
 		for (int b : sp) {
-			if (a != -1)
-			sim.drive(a, b, Color.RED.darker());
-			sim.visitStation(b);
+			if (a != -1) {
+				sim.drive(a, b, Color.RED.darker());
+			}
+			sim.visitStation(b, Color.RED.darker());
 			a = b;
 		}
 
         sim.stopSequence();
-
 
     }
 
 }
 
 class ScotlandYardHeuristic implements Heuristic<Integer> {
-	private Map<Integer,Point> coord; // Ordnet jedem Knoten seine Koordinaten zu
+	private Map<Integer,Point> coord = new TreeMap<>(); // Ordnet jedem Knoten seine Koordinaten zu
 
 	private static class Point {
 		int x;
@@ -137,12 +170,29 @@ class ScotlandYardHeuristic implements Heuristic<Integer> {
 
 	public ScotlandYardHeuristic() throws FileNotFoundException {
 
+		//Zum schauen wo der ordner ist
+		//File file = new File("src/shortestPath");
+		//for(String fileNames : file.list()) System.out.println(fileNames);
+
+		Scanner in = new Scanner(new File("src/shortestPath/ScotlandYard_Knoten.txt"));
+
+		while (in.hasNextLine()) {
+			if (!in.hasNext()) break;
+
+			int knoten = in.nextInt();
+			int x = in.nextInt();
+			int y = in.nextInt();
+
+			coord.put(knoten, new Point(x,y));
+
+		}
+		System.out.println("KONSTRUKTOR");
 	}
 
 	public double estimatedCost(Integer u, Integer v) {
-		double h = 0;
-		h = Math.sqrt((coord.get(u).x - coord.get(v).x) * 2
-				+ (coord.get(u).y - coord.get(v).y) * 2);
+		Point vp = coord.get(u);
+		Point wp = coord.get(v);
+		double h = Math.sqrt((vp.x-wp.x)*(vp.x-wp.x) + (vp.y-wp.y)*(vp.y-wp.y));
 		return h;
 	}
 

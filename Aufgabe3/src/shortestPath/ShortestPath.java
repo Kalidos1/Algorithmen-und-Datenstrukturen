@@ -6,6 +6,7 @@ package shortestPath;
 import sim.SYSimulation;
 import directedGraph.*;
 
+import java.awt.*;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -67,13 +68,19 @@ public class ShortestPath<V> {
 	 */
 	public boolean searchShortestPath(V s, V g) {
 		if (heuristic == null) {
-			return doDijkstra(s);
+			doDijkstra(s);
+			v = g;
+			if (getShortestPath().get(0) == s) {
+				return true;
+			} else {
+				return false;
+			}
 		} else {
 			return doAStern(s,g);
 		}
 	}
 
-	public boolean doDijkstra(V s) {
+	public void doDijkstra(V s) {
 		v = s;
 		List<V> kl = new LinkedList();
 		for (V x : myGraph.getVertexSet()) {
@@ -92,6 +99,8 @@ public class ShortestPath<V> {
 				}
 			}
 			kl.remove(v);
+			if (sim != null)
+				sim.visitStation((Integer) v, Color.blue);
 			System.out.println("Besuche Knoten " + v + " mit d = " + dist.get(v));
 			for (V w : myGraph.getSuccessorVertexSet(v)) {
 				if (dist.get(w) == Double.POSITIVE_INFINITY) kl.add(w);
@@ -101,7 +110,6 @@ public class ShortestPath<V> {
 				}
 			}
 		}
-		return false;
 	}
 
 	public boolean doAStern(V s,V z) {
@@ -117,14 +125,20 @@ public class ShortestPath<V> {
 		while(!kl.isEmpty()) {
 			double u = Double.MAX_VALUE;
 			for (V x : kl) {
-				if (dist.get(x) + heuristic.estimatedCost(x,z) < u) {
+
+				double dh = dist.get(x) + heuristic.estimatedCost(x,z);
+				if (dh < u) {
 					v = x;
-					u = dist.get(x) + heuristic.estimatedCost(x,z);
+					u = dh;
 				}
 			}
 			kl.remove(v);
+			if (sim != null)
+				sim.visitStation((Integer) v, Color.blue);
 			System.out.println("Besuche Knoten " + v + " mit d = " + dist.get(v));
-			if (v == z) return true;
+			if (v.equals(z)) {
+				return true;
+			}
 			for (V w : myGraph.getSuccessorVertexSet(v)) {
 				if (dist.get(w) == Double.POSITIVE_INFINITY) kl.add(w);
 				if (dist.get(v) + myGraph.getWeight(v, w) < dist.get(w)) {
@@ -164,8 +178,9 @@ public class ShortestPath<V> {
 		V last = null;
 		List<V> help2 = getShortestPath();
 		for(V x : help2) {
-			if(last != null)
+			if(last != null) {
 				help += myGraph.getWeight(last, x);
+			}
 			last = x;
 		}
 		return help;

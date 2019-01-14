@@ -13,6 +13,7 @@ public class SYDemo {
 			e.printStackTrace();
 			return;
 		}
+
 		sim.startSequence("Test1");
         sim.visitStation(9);
         sim.visitStation(20);
@@ -44,5 +45,6 @@ public class SYDemo {
         sim.drive(55, 89, Color.GREEN.darker());
         sim.drive(89, 67, Color.RED.darker());
         sim.stopSequence();
+
     }
 }
