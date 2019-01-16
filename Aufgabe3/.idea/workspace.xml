@@ -4,36 +4,26 @@
     <list default="true" id="08749bef-f998-4cf2-a160-43b6aec51639" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/ExampleGraph/ExampleGraph$Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aufgabe3/ExampleGraph/ExampleGraph$Point.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/ExampleGraph/ExampleGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aufgabe3/ExampleGraph/ExampleGraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/ExampleGraph/ScotlandYard_Kanten.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/ExampleGraph/ScotlandYard_Knoten.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/directedGraph/AdjacencyListDirectedGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aufgabe3/directedGraph/AdjacencyListDirectedGraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/directedGraph/DirectedGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aufgabe3/directedGraph/DirectedGraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/gui/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aufgabe3/gui/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/gui/MapEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aufgabe3/gui/MapEntry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/gui/Route.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aufgabe3/gui/Route.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/gui/SimGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aufgabe3/gui/SimGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/gui/Station.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aufgabe3/gui/Station.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/gui/Toolbar$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aufgabe3/gui/Toolbar$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/gui/Toolbar$ToolbarState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aufgabe3/gui/Toolbar$ToolbarState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/gui/Toolbar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aufgabe3/gui/Toolbar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/shortestPath/Heuristic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aufgabe3/shortestPath/Heuristic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/shortestPath/ScotlandYard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aufgabe3/shortestPath/ScotlandYard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/shortestPath/ScotlandYardHeuristic$Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aufgabe3/shortestPath/ScotlandYardHeuristic$Point.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/shortestPath/ScotlandYardHeuristic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aufgabe3/shortestPath/ScotlandYardHeuristic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/shortestPath/ShortestPath.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aufgabe3/shortestPath/ShortestPath.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/sim/SYDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aufgabe3/sim/SYDemo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/sim/SYSimulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aufgabe3/sim/SYSimulation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ExampleGraph/ScotlandYard_Kanten.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/shortestPath/ScotlandYard_Kanten.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ExampleGraph/ScotlandYard_Knoten.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/shortestPath/ScotlandYard_Knoten.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shortestPath/ScotlandYard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shortestPath/ScotlandYard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shortestPath/ShortestPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shortestPath/ShortestPath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/SYDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/SYDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/directedGraph/AdjacencyListDirectedGraph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/directedGraph/DirectedGraph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/gui/Map.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/gui/MapEntry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/gui/Route.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/gui/SimGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/gui/Station.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/gui/Toolbar$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/gui/Toolbar$ToolbarState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/gui/Toolbar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/shortestPath/Heuristic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/shortestPath/ScotlandYard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/shortestPath/ScotlandYardHeuristic$Point.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/shortestPath/ScotlandYardHeuristic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/shortestPath/ShortestPath.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/sim/SYDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aufgabe3/sim/SYSimulation.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,15 +57,16 @@
     <session id="142650858">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="34" />
+          <entry key="java" value="36" />
           <entry key="jpg" value="6" />
           <entry key="txt" value="7" />
         </counts>
@@ -83,7 +74,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="6" />
-          <entry key="JAVA" value="34" />
+          <entry key="JAVA" value="36" />
           <entry key="PLAIN_TEXT" value="7" />
         </counts>
       </usages-collector>
@@ -106,11 +97,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ShortestPath.java" pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/shortestPath/ShortestPath.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="103" column="12" selection-start-line="103" selection-start-column="12" selection-end-line="103" selection-end-column="12" />
+            <state relative-caret-position="441">
+              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -118,11 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScotlandYard.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/shortestPath/ScotlandYard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1065">
-              <caret line="103" column="8" selection-start-line="103" selection-start-column="8" selection-end-line="103" selection-end-column="8" />
+            <state relative-caret-position="546">
+              <caret line="36" column="76" selection-start-line="36" selection-start-column="76" selection-end-line="36" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -171,13 +162,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="960" />
-    <option name="width" value="960" />
-    <option name="height" value="1040" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="2576" />
+    <option name="height" value="1416" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -185,8 +174,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -228,18 +215,26 @@
               <item name="Aufgabe3" type="b2602c69:ProjectViewProjectNode" />
               <item name="Aufgabe3" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="shortestPath" type="462c0819:PsiDirectoryNode" />
+              <item name="ScotlandYard.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+            <path>
+              <item name="Aufgabe3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Aufgabe3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sim" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547221101805" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547644148921" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
@@ -279,6 +274,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="SYDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sim.SYDemo" />
@@ -289,6 +287,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="ScotlandYard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="shortestPath.ScotlandYard" />
@@ -299,6 +300,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <list>
       <item itemvalue="Application.ExampleGraph" />
@@ -328,6 +332,7 @@
       <workItem from="1547220684331" duration="371000" />
       <workItem from="1547471345346" duration="13074000" />
       <workItem from="1547488064214" duration="11943000" />
+      <workItem from="1547643880772" duration="303000" />
     </task>
     <task id="LOCAL-00001" summary="COmmit">
       <created>1547048466342</created>
@@ -354,7 +359,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36711000" />
+    <option name="totallyTimeSpent" value="37014000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -366,68 +371,37 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="0" width="960" height="1040" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <layout>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3296" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32829374" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992" visible="true" weight="0.089427665" />
+      <window_info id="Structure" order="1" sideWeight="0.5008" side_tool="true" weight="0.18638574" />
       <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="7" />
-      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.5008" side_tool="true" weight="0.18638574" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32908705" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33585313" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3296" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992" weight="0.25" />
-      <window_info anchor="right" id="Database" order="8" />
-      <window_info id="Structure" order="1" sideWeight="0.5008" side_tool="true" weight="0.18638574" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.5008" side_tool="true" weight="0.18638574" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39524838" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32908705" />
-    </layout>
-    <layout-to-restore>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32908705" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33585313" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992" visible="true" weight="0.25" />
-      <window_info id="Structure" order="1" sideWeight="0.5008" side_tool="true" weight="0.18638574" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3296" />
-      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39596602" />
-      <window_info anchor="right" id="Database" order="8" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3296" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32829374" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" />
-      <window_info id="Favorites" order="6" sideWeight="0.5008" side_tool="true" weight="0.18638574" />
-    </layout-to-restore>
+      <window_info anchor="right" id="Database" order="8" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -439,59 +413,7 @@
     <MESSAGE value="COmmit" />
     <option name="LAST_COMMIT_MESSAGE" value="COmmit" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="12" />
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/shortestPath/ShortestPath.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="88" column="38" lean-forward="true" selection-start-line="88" selection-start-column="38" selection-end-line="88" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shortestPath/ScotlandYard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2057">
-          <caret line="121" column="8" lean-forward="true" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shortestPath/ShortestPath.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="26" column="66" lean-forward="true" selection-start-line="26" selection-start-column="66" selection-end-line="26" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shortestPath/Heuristic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shortestPath/ScotlandYard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1989">
-          <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ExampleGraph.jpg" />
     <entry file="file://$PROJECT_DIR$/src/ScotlandYard_Kanten.txt" />
     <entry file="file://$PROJECT_DIR$/src/ScotlandYard_Knoten.txt" />
@@ -549,55 +471,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/7zO06B26CC9/ScotlandYard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="136" column="11" selection-start-line="136" selection-start-column="11" selection-end-line="136" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/io/FileInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="194" selection-start-line="194" selection-end-line="194" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/lang/Integer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="613" column="22" selection-start-line="613" selection-start-column="22" selection-end-line="613" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/7zOC8AF3945/ScotlandYard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="80" column="70" lean-forward="true" selection-start-line="80" selection-start-column="70" selection-end-line="80" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/TreeMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="276" column="13" selection-start-line="276" selection-start-column="13" selection-end-line="276" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/Vector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="779" column="32" selection-start-line="779" selection-start-column="32" selection-end-line="779" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/7zO8BCBFD87/ScotlandYard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="74" column="56" lean-forward="true" selection-start-line="74" selection-start-column="56" selection-end-line="74" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/7zO06B26CC9/ScotlandYard.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/io/FileInputStream.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/lang/Integer.java" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/7zOC8AF3945/ScotlandYard.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/TreeMap.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/Vector.java" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/7zO8BCBFD87/ScotlandYard.java" />
     <entry file="file://$PROJECT_DIR$/src/directedGraph/DirectedGraph.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
@@ -616,16 +496,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/Scanner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="2075" selection-start-line="2075" selection-end-line="2075" />
-          <folding>
-            <element signature="e#78050#78051#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/Scanner.java" />
     <entry file="file://$PROJECT_DIR$/src/shortestPath/Heuristic.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -633,13 +504,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/7zO4A1D36C6/ScotlandYard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1678">
-          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/7zO4A1D36C6/ScotlandYard.java" />
     <entry file="file://$PROJECT_DIR$/src/shortestPath/ScotlandYard_Knoten.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -684,20 +549,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shortestPath/ScotlandYard.java">
+    <entry file="file://$PROJECT_DIR$/src/shortestPath/ShortestPath.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1065">
-          <caret line="103" column="8" selection-start-line="103" selection-start-column="8" selection-end-line="103" selection-end-column="8" />
+        <state relative-caret-position="441">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shortestPath/ShortestPath.java">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/StdDraw.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="103" column="12" selection-start-line="103" selection-start-column="12" selection-end-line="103" selection-end-column="12" />
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/StdDraw-1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shortestPath/ScotlandYard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="36" column="76" selection-start-line="36" selection-start-column="76" selection-end-line="36" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
