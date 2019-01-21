@@ -25,7 +25,12 @@ public class UnionFind {
     }
 
     public int size() {
-        return p.length;
+        int size = 0;
+
+        for (int e : p) {
+            if (e <= -1) size ++;
+        }
+        return size;
     }
 
     public void union(int s1, int s2) {
@@ -40,11 +45,7 @@ public class UnionFind {
             p[s1] = s2;
         else {
             if ( -p[s1] == -p[s2] )
-                if (p[s1] <= -1) {
-                    p[s1] = -1;
-                } else {
                     p[s1]--; // Höhe von s1 erhöht sich um 1
-                }
             p[s2] = s1;
         }
     }

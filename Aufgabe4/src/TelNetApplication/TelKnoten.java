@@ -1,8 +1,8 @@
 package TelNetApplication;
 
 public class TelKnoten {
-    private int x;
-    private int y;
+    int x;
+    int y;
 
     public TelKnoten(int x,int y) {
         this.x = x;
@@ -11,6 +11,6 @@ public class TelKnoten {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "TelKnoten {x = " + x + " , y = " + y + " }";
     }
 }
